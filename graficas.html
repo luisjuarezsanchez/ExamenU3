@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<title></title>
+	<script type="text/javascript" src="chart.min.js"></script>
+	<style type="text/css">
+		#myChart{
+			max-height: 90vh; 
+			max-width: 50vw;
+		}
+		#titulo1{
+  color: rgb(21, 27, 28);
+  font-weight: normal;
+  font-size: 35px;
+  font-family: Arial;
+  text-transform: uppercase
+		}
+	</style>
+</head>
+<body>
+	<h1>Precios de libros</h1> <br>
+	<canvas id="myChart"></canvas>
+	<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'doughnut',
+	    data: {
+	        labels: ['Dialogos de Platon', 'La amenaza del caballero oscuro', 'El mundo de Sofia', 'Juegos sagrados', 'Las enseñanzas de Don Juan', 'El origen del mal', 'Un mundo Feliz','El evangelio segun Luzbel'],
+	        datasets: [{
+	            label: '# of Votes',
+	            data: [60, 150, 300, 250, 70, 50, 70, 99],
+	            backgroundColor: [
+	                'rgba(6, 6, 6, 0.7)',
+	                'rgba(59, 89, 152, 0.7)',
+	                'rgba(236, 20, 16, 0.7)',
+	                'rgba(75, 192, 192, 0.7)',
+	                'rgba(222, 27, 134, 0.7)',
+	                'rgba(5, 211, 247, 0.7)'
+	            ],
+	            borderColor: [
+	                'rgba(6, 6, 6, 1)',
+	                'rgba(59, 89, 152, 1)',
+	                'rgba(236, 20, 16, 1)',
+	                'rgba(75, 192, 192, 1)',
+	                'rgba(222, 27, 134, 1)',
+	                'rgba(5, 211, 247, 1)'
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            y: {
+	                beginAtZero: true
+	            }
+	        }
+	    }
+	});
+	</script>	
+</body>
+</html>
